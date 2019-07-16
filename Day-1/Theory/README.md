@@ -17,10 +17,19 @@
 
 ## Introduction and Architecture
 
-- Angular is a platform and framework for building client applications in HTML and TypeScript
+- [Angular](https://angular.io/) is a platform and framework for building client applications in HTML and TypeScript
 - Angular is written in TypeScript, implementing funcitonalities as a set of TypeScript libraries that we import in our applications
-- TypeScript is a statically compiled language to write clear and simple JavaScript code
+- [TypeScript](https://www.typescriptlang.org/) is a statically compiled language to write clear and simple JavaScript code
 - TypeScript is converted into plain JavaScript code
+- [Angular CLI](https://angular.io/cli) is a command-line interface tool that we can use to initialize, develop and maintain Angular application
+- for example, if we want to create, build and serve a new Angular project on a development service, we can use:
+
+    ```sh
+    ng new my-project
+    cd my-project
+    ng serve
+    ```
+
 - basic building blocks are *NgModules* which collect related code
 - modules are compilation context for *components*
 - components define *views*, which are screen elements
@@ -29,6 +38,8 @@
 - the components are arranged hierarchically
 - *Router* service provided by Angular helps us define the link between URL and views
 
+![Angular-Architecture](img/Angular_architecture.jpg)
+
 ## Components and Templates
 
 - every Angular application has at least one component: *root*
@@ -36,6 +47,11 @@
 - a component is a class that contains application data and logic and it is linked to a HTML template
 - plays the part of controller/viewmodel from MVC architecture
 - *@Component()* decorator identifies the class as a component
+- we can generate a new component also using Angular CLI:
+
+    ```sh
+    ng generate component book
+    ```
 
 ### Component Lifecycle
 
