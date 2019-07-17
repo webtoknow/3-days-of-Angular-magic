@@ -9,9 +9,6 @@
   - [Constructor or Variable Assignment](#constructor-or-variable-assignment)
   - [Create a class for the data](#create-a-class-for-the-data)
   - [Template Syntax](#template-syntax)
-- [Built-in Directives](#built-in-directives)
-  - [Built-in Attribute Directives](#built-in-attribute-directives)
-  - [Built-in Structural Directives](#built-in-structural-directives)
 - [Binding](#binding)
 - [Routes and Navigation](#routes-and-navigation)
 
@@ -153,32 +150,6 @@ class Joke {
 ```HTML
 <p>We want to display a book title in uppercase: {{bookTitle | uppercase}}
 ```
-
-## Built-in Directives
-
-- Angular offers 2 types of built-in directives: **attribute directives** and **structural directives**.
-
-### Built-in Attribute Directives
-
-- listen to and modify the behavior of HTML elements, attributes, properties and components
-- usually apply them to elements as if they were HTML attributes
-- the most common built-in attribute directives are:
-    - **NgClass** - adds and removes a set of CSS classes
-    - **NgStyle** - adds and removes a set of HTML styles
-    - **NgModel** - adds two-way data binding to an HTML form element
-
-### Built-in Structural Directives
-
-- are responsible for HTML layout
-- they shape or reshape the DOM structure by adding, removing and manipulating the host elements
-- the most common built-in structural directives are:
-    - **NgIf** - conditionally creates or destroys subviews from the template
-    - **NgFor** - repeat a node for each item in a list
-    - **NgSwitch** - a set o directivesthat switch among alternative views
-
-> Note
->
-> We can also build our own directives.
 
 ## Binding
 
