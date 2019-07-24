@@ -176,4 +176,3 @@
 | Form validation | Functions | Directives |
 | Mutability | Immutable | Mutable |
 | Scalability | Low-level API access | Abstraction on top of APIs |
-

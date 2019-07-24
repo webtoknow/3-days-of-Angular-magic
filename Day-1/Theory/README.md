@@ -15,10 +15,10 @@
 ## Introduction and Architecture
 
 - [Angular](https://angular.io/) is a platform and framework for building client applications in HTML and TypeScript
-- Angular is written in TypeScript, implementing funcitonalities as a set of TypeScript libraries that we import in our applications
+- Angular implements funcitonalities as a set of TypeScript libraries that we import in our applications
 - [TypeScript](https://www.typescriptlang.org/) is a statically compiled language to write clear and simple JavaScript code
 - TypeScript is converted into plain JavaScript code
-- [Angular CLI](https://angular.io/cli) is a command-line interface tool that we can use to initialize, develop and maintain Angular application
+- [Angular CLI](https://angular.io/cli) is a command-line interface tool that we can use to initialize, develop and maintain Angular applications
 - for example, if we want to create, build and serve a new Angular project on a development service, we can use:
 
     ```sh
