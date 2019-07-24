@@ -77,32 +77,32 @@
 
 ### Mind map - Mindmeister
 
-![LoginPage](Img/Mindmap.PNG "Mindmap")
+![LoginPage](img/Mindmap.PNG "Mindmap")
 
 ### Wireframe - Balsamiq
 
-![LoginPage](Img/Login-W.png "Login page")
+![LoginPage](img/Login-W.png "Login page")
 
-![RegisterPage](Img/Register-W.png "Register Page")
+![RegisterPage](img/Register-W.png "Register Page")
 
-![Dashboard](Img/Dashboard-W.png "Dashboard")
+![Dashboard](img/Dashboard-W.png "Dashboard")
 
 ### Prototype - Axure RP
 
-![LoginPage](Img/Login-PT.png "Login page")
+![LoginPage](img/Login-PT.png "Login page")
 
-![RegisterPage](Img/Register-PT.png "Register Page")
+![RegisterPage](img/Register-PT.png "Register Page")
 
-![Dashboard](Img/Dashboard-PT.png "Dashboard")
+![Dashboard](img/Dashboard-PT.png "Dashboard")
 
 ### Visual Design - Adobe XD
 
-![LoginPage](Img/Login-VD.png "Login page")
+![LoginPage](img/Login-VD.png "Login page")
 
-![RegisterPage](Img/Register-VD.png "Register Page")
+![RegisterPage](img/Register-VD.png "Register Page")
 
-![Dashboard](Img/Dashboard-VD.png "Dashboard")
+![Dashboard](img/Dashboard-VD.png "Dashboard")
 
-![404Page](Img/404.png "Error 404 - Page not found")
+![404Page](img/404.png "Error 404 - Page not found")
 
-![Assets](Img/Assets-VD.png "Assets")
+![Assets](img/Assets-VD.png "Assets")
