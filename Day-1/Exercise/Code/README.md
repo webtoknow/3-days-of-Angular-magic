@@ -1,1 +1,1 @@
- <!-- In this Code folder we will put our code from Angular Day 1 -->
+In this Code folder we will put our code from Angular Day 1
