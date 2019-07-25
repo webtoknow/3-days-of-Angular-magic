@@ -1,1 +1,227 @@
-# Day 1 - Exercise
+# Day 1 - Exercises
+
+## Table of contents
+
+- [Exercise 0 - Initial Setup](#exercise-0---initial-setup)
+- [Exercise 1 - Pages, Routing and Navigation](#exercise-1---pages-routing-and-navigation)
+  - [Create pages](#create-pages)
+  - [Add routes](#add-routes)
+  - [Fill in global style file](#fill-in-global-style-file)
+  - [Add Bootstrap, Datepicker and Fontawesome](#add-bootstrap-datepicker-and-fontawesome)
+
+## Exercise 0 - Initial Setup
+
+- install [Angular CLI](https://cli.angular.io/):
+
+    ```bash
+    npm install -g @angular/cli
+    ```
+
+- go to *Day-1\Exercise\Code*:
+
+    ```bash
+    cd 3-Days-of-Angular-magic\Day-1\Exercise\Code
+    ```
+
+- let's generate a new Angular project using CLI:
+
+    ```bash
+    ng new fx-trading-app
+    ```
+
+- start the project:
+
+    ```bash
+    cd fx-trading-app
+    ng serve
+    ```
+
+- you should be now able to see your our fisrt Angular application on http://localhost:4200/
+
+## Exercise 1 - Pages, Routing and Navigation
+
+### Create pages
+
+- go to *Day-1\Exercise\Code\fx-trading-app*:
+
+    ```bash
+    cd 3-Days-of-Angular-magic\Day-1\Exercise\Code\fx-trading-app
+    ```
+
+- install *ngx-toastr* to see the alerts in a nice way:
+
+    ```bash
+    npm install ngx-toastr
+    npm install @angular/animations
+    ```
+
+- create a folder for our views in *fx-trading-app\src\app*:
+
+    ```bash
+    cd src\app
+    mkdir pages
+    cd pages
+    ```
+
+- generate page components using CLI:
+
+    ```bash
+    ng generate component dashboard-page
+    ng generate component login-page
+    ng generate component not-found-page
+    ng generate component register-page
+    ```
+
+### Add routes
+
+- in *app.module.ts* import *RouterModule* and *Routes* from *@angular/router*:
+
+    ```JS
+    import { RouterModule, Routes } from '@angular/router';
+    ```
+
+- then create routes by linking all our components:
+
+    ```JS
+    // imports
+
+    const appRoutes: Routes = [
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+    { path: 'login', component: LoginPageComponent },
+    { path: 'register', component: RegisterPageComponent },
+    { path: 'dashboard', component: DashboardPageComponent },
+    { path: '**', component: NotFoundPageComponent }
+    ];
+
+    // @NgModule({...})
+    ```
+
+- *appRoutes* describes how to navigate through many routes
+- now we have to pass *appRoutes* to the *RouterModule.forRoot* method in the module imports to configure the router:
+
+    ```JS
+    {
+    ...
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(appRoutes),
+    ],
+    ...
+    }
+    ```
+
+- remove the old markup from *app.component.html* and then add the *RouterOutlet* directive:
+
+```HTML
+<router-outlet></router-outlet>
+```
+
+### Fill in global style file
+
+- let's update the global style file, *styles.css*, which contains the style used in the whole application:
+
+```CSS
+/* You can add global styles to this file, and also import other style files */
+
+html, body{
+    height: 100%;
+    color: #373A3C;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #7C7C7C;
+}
+
+.btn-primary {
+    background-color: #3496F0;
+}
+
+.btn-link {
+    color: #3496F0;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F2F2F2;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-vertical-centered {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.title-border {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.screen-full-height {
+    height: 100vh;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #D9534F;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+```
+
+- *toast* was its own style, so let's update *angular.json* by adding the file which contains it:
+
+```JSON
+"styles": [
+  "styles.scss", // already here
+  "node_modules/ngx-toastr/toastr.css" // add this
+]
+```
+
+- we will also should update *app.module.ts* to add *ToastrModule*:
+
+    ```JavaScript
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { ToastrModule } from 'ngx-toastr';
+    ...
+    imports: [
+        ...,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot()
+    ],
+    ...
+    ```
+
+### Add Bootstrap, Datepicker and Fontawesome
+
+- *index.html*:
+
+    ```HTML
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+    ```
+
+- install bootstrap dependency:
+
+    ```bash
+    npm install ngx-bootstrap@3.0.1
+    ```
+
+- *app.module.ts*:
+
+    ```JavaScript
+    import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
+    imports: [
+        ...
+        BsDatepickerModule.forRoot()
+    ]
+
+    ```
