@@ -38,7 +38,7 @@ You can find all design specifications in
 
 ### Login
 
-![Login](Design/img/Login-vd.png "Login")
+![Login](Design/img/Login-VD.png "Login")
 
 ### Register
 
