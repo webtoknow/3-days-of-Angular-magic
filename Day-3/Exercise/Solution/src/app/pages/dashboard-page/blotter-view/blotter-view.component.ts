@@ -27,11 +27,11 @@ export class BlotterViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.startPooling();
+    this.startPolling();
   }
 
 
-  startPooling(): void {
+  startPolling(): void {
     this.tradeService.getTransactionsPolling()
       .pipe(takeUntil(this.unsubscribe))
       .subscribe(response => {

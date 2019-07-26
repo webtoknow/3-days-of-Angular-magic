@@ -87,7 +87,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
     this.widget.secondaryCcy= tempCCY;
   }
 
-  startPooling() {
+  startPolling() {
     const { primaryCcy, secondaryCcy } = this.widget;
     this.tradeService.getFxRatePolling(primaryCcy, secondaryCcy)
       .pipe(takeUntil(this.unsubscribe))
@@ -105,7 +105,7 @@ export class WidgetComponent implements OnInit, OnDestroy {
     const { primaryCcy, secondaryCcy } = this.widget;
     if (primaryCcy && secondaryCcy && primaryCcy !== secondaryCcy) {
       this.widget.pickCCYState = false;
-      this.startPooling();
+      this.startPolling();
     }
     else if (!primaryCcy || !secondaryCcy) {
       this.toastr.error('Please select both Primary and Secondary Currencies!');

@@ -8,7 +8,7 @@
   - [Transaction model](#transaction-model)
   - [Trade service](#trade-service)
   - [Update Application Module](#update-application-module)
-  - [Implement pooling mechanism](#implement-pooling-mechanism)
+  - [Implement polling mechanism](#implement-polling-mechanism)
   - [Blotter View component](#blotter-view-component)
 - [Exercise 4 - FX Rates View page](#exercise-4---fx-rates-view-page)
   - [Rate model](#rate-model)
@@ -223,9 +223,9 @@ imports: [
   ]
 ```
 
-### Implement pooling mechanism
+### Implement polling mechanism
 
-- we want to simulate the real-time behavior for getting the transactions. This is the reason why we implement pooling mechanism.
+- we want to simulate the real-time behavior for getting the transactions. This is the reason why we implement polling mechanism.
 - so, we should add a new method in *trade.service.ts*, which will make a call to get all transactions every 2 seconds:
 
     ```JavaScript
@@ -417,11 +417,11 @@ imports: [
     ) { }
 
     ngOnInit() {
-        this.startPooling();
+        this.startPolling();
     }
 
 
-    startPooling(): void {
+    startPolling(): void {
         this.tradeService.getTransactionsPolling()
         .pipe(takeUntil(this.unsubscribe))
         .subscribe(response => {
@@ -459,8 +459,8 @@ imports: [
 
 - so, we have the following behavior:
 
-    - when we initiate this component (*ngOnInit*), we should call *startPooling* method, which calls *tradeService.getTransactionsPolling()*
-    - after getting all transactions, *startPooling* method:
+    - when we initiate this component (*ngOnInit*), we should call *startPolling* method, which calls *tradeService.getTransactionsPolling()*
+    - after getting all transactions, *startPolling* method:
         - adds *ccyPair* property to all transactions by concatenating *primaryCCY* and *secondaryCCY*
         - gets all *currenciesPairs* to fill in the filter select
         - applies default sort and filter (with no criteria)
@@ -821,7 +821,7 @@ imports: [
         this.widget.secondaryCcy= tempCCY;
     }
 
-    startPooling() {
+    startPolling() {
         const { primaryCcy, secondaryCcy } = this.widget;
         this.tradeService.getFxRatePolling(primaryCcy, secondaryCcy)
         .pipe(takeUntil(this.unsubscribe))
@@ -839,7 +839,7 @@ imports: [
         const { primaryCcy, secondaryCcy } = this.widget;
         if (primaryCcy && secondaryCcy && primaryCcy !== secondaryCcy) {
         this.widget.pickCCYState = false;
-        this.startPooling();
+        this.startPolling();
         }
         else if (!primaryCcy || !secondaryCcy) {
         this.toastr.error('Please select both Primary and Secondary Currencies!');
@@ -861,8 +861,8 @@ imports: [
     - *onSell*: save the transaction with *sell* action
     - *onBuy*: save the transaction with *buy* action
     - *onCCYChange*: switch the primary currency with the secondary one
-    - *startPooling*: get FX Rates through pooling to simulate real-time behavior
-    - *onPickCurrency*: when a new widget is added with primary and secondary currencies, start pooling FX Rates
+    - *startPolling*: get FX Rates through polling to simulate real-time behavior
+    - *onPickCurrency*: when a new widget is added with primary and secondary currencies, start polling FX Rates
 
 ### FX Rates View component
 
