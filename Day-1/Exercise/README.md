@@ -168,11 +168,6 @@ h1,h2,h3,h4,h5,h6 {
 .ng-invalid:not(form)  {
   border-left: 5px solid #D9534F;
 }
-
-.clickable:hover {
-    cursor: pointer;
-    opacity: 0.8;
-}
 ```
 
 - *toast* was its own style, so let's update *angular.json* by adding the file which contains it:
