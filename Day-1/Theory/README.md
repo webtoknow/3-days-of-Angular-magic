@@ -30,7 +30,7 @@
 - basic building blocks are *NgModules* which collect related code
 - modules are compilation context for *components*
 - components define *views*, which are screen elements
-- components use *services*, which provide some funcitonalities not directly related to views and can be injected to be used in many components
+- components use *services*, which provide some functionalities not directly related to views and can be injected to be used in many components
 - both compoennts and services are just classes with some *decorators* which mark their type and tell Angular how to use them
 - the components are arranged hierarchically
 - *Router* service provided by Angular helps us define the link between URL and views
