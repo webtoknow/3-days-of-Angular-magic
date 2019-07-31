@@ -47,3 +47,11 @@ You can find all design specifications in
 ### Dashboard
 
 ![Dashboard](Design/img/Dashboard-VD.png "Dashboard")
+
+### Not Found
+
+![Not Found](Design/img/404.png "Not Found")
+
+### Specifications
+
+![Specifications](Design/img/Assets-VD.png "Specifications")
