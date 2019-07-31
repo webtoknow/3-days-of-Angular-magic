@@ -170,7 +170,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 ```
 
-- *toast* was its own style, so let's update *angular.json* by adding the file which contains it:
+- *toast* has its own style, so let's update *angular.json* by adding the file which contains it:
 
 ```JSON
 "styles": [
