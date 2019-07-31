@@ -17,12 +17,19 @@ import { FxRatesViewComponent } from './pages/dashboard-page/fx-rates-view/fx-ra
 import { WidgetComponent } from './pages/dashboard-page/widget/widget.component';
 
 import { TradeService } from './services/trade.service';
+import { UserService } from 'src/app/services/user.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
+import { AuthGuard } from 'src/app/guards/auth.guard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from 'src/app/helpers/jwt.interceptor';
+import { ErrorInterceptor } from 'src/app/helpers/error.interceptor';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
-  { path: 'dashboard', component: DashboardPageComponent },
+  { path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundPageComponent }
 ];
 
@@ -48,7 +55,12 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot()
   ],
   providers: [
-    TradeService
+    TradeService,
+    UserService,
+    AuthenticationService,
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
