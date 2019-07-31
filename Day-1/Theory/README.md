@@ -15,7 +15,7 @@
 ## Introduction and Architecture
 
 - [Angular](https://angular.io/) is a platform and framework for building client applications in HTML and TypeScript
-- Angular implements funcitonalities as a set of TypeScript libraries that we import in our applications
+- Angular implements functionalities as a set of TypeScript libraries that we import in our applications
 - [TypeScript](https://www.typescriptlang.org/) is a statically compiled language to write clear and simple JavaScript code
 - TypeScript is converted into plain JavaScript code
 - [Angular CLI](https://angular.io/cli) is a command-line interface tool that we can use to initialize, develop and maintain Angular applications
@@ -30,7 +30,7 @@
 - basic building blocks are *NgModules* which collect related code
 - modules are compilation context for *components*
 - components define *views*, which are screen elements
-- components use *services*, which provide some funcitonalities not directly related to views and can be injected to be used in many components
+- components use *services*, which provide some functionalities not directly related to views and can be injected to be used in many components
 - both compoennts and services are just classes with some *decorators* which mark their type and tell Angular how to use them
 - the components are arranged hierarchically
 - *Router* service provided by Angular helps us define the link between URL and views
@@ -111,7 +111,7 @@ export class AppComponent {
 ### Create a class for the data
 
 - a good practice is to try to isolate the data structures from the component code
-- this class will be called *Domanin Model* and it is just a class used to store data and functions
+- this class will be called *Domain Model* and it is just a class used to store data and functions
 - *e.g.*:
 
 ```javascript

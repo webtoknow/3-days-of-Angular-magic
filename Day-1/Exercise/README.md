@@ -36,7 +36,7 @@
     ng serve
     ```
 
-- you should be now able to see your our fisrt Angular application on http://localhost:4200/
+- you should be now able to see your our first Angular application on http://localhost:4200/
 
 ## Exercise 1 - Pages, Routing and Navigation
 
@@ -170,7 +170,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 ```
 
-- *toast* was its own style, so let's update *angular.json* by adding the file which contains it:
+- *toast* has its own style, so let's update *angular.json* by adding the file which contains it:
 
 ```JSON
 "styles": [
