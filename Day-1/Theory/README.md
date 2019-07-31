@@ -111,7 +111,7 @@ export class AppComponent {
 ### Create a class for the data
 
 - a good practice is to try to isolate the data structures from the component code
-- this class will be called *Domanin Model* and it is just a class used to store data and functions
+- this class will be called *Domain Model* and it is just a class used to store data and functions
 - *e.g.*:
 
 ```javascript
