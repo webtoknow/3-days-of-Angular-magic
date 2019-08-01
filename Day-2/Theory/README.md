@@ -88,7 +88,7 @@
 - **Push**:
     - the data-producer decides when the consumer gets the data
     - **promises are the most common way of push in JavaScript**: a promise is the producer and delivers a resolved value to the registered callbacks, which are the consumers
-    - **observables are the new way of pushing data in JavaScript**: an observalbe is a producer of multiple values, pushing them to subscribers
+    - **observables are the new way of pushing data in JavaScript**: an observable is a producer of multiple values, pushing them to subscribers
 
 ### Observables - basic usage
 
