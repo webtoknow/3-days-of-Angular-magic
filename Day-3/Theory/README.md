@@ -57,11 +57,20 @@
 - *e.g.*:
 
     ```javascript
-    import { Directive } from '@angular/core';
+    import { Directive, ElementRef } from '@angular/core';
 
-    @Directive({ selector: '[myDirective]'})
-    export class MyDirective {
+    @Directive({
+        selector: '[appHighlight]'
+    })
+    export class HighlightDirective {
+        constructor(el: ElementRef) {
+            el.nativeElement.style.backgroundColor = 'yellow';
+        }
     }
+    ```
+
+    ```HTML
+    <p appHighlight>Highlight me!</p>
     ```
 
 ## Pipes

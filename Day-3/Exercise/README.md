@@ -145,7 +145,7 @@ npm start
             <div class="form-group flex">
                 <div class="col">
                 <label for="password">Password</label>
-                <input type="password" class="form-control form-control-sm" id="inputPassword" 
+                <input type="password" class="form-control form-control-sm" id="inputPassword"
                     formControlName="password" placeholder="password" autocomplete="new-password"
                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -157,7 +157,7 @@ npm start
             <div class="form-group flex">
                 <div class="col">
                 <label for="password">Confirm password</label>
-                <input type="password" class="form-control form-control-sm" id="inputConfirmPassword" 
+                <input type="password" class="form-control form-control-sm" id="inputConfirmPassword"
                     formControlName="confirmPassword" placeholder="confirm password" autocomplete="new-password"
                     [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
                 <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
