@@ -88,7 +88,7 @@
 - **Push**:
     - the data-producer decides when the consumer gets the data
     - **promises are the most common way of push in JavaScript**: a promise is the producer and delivers a resolved value to the registered callbacks, which are the consumers
-    - **observables are the new way of pushing data in JavaScript**: an observalbe is a producer of multiple values, pushing them to subscribers
+    - **observables are the new way of pushing data in JavaScript**: an observable is a producer of multiple values, pushing them to subscribers
 
 ### Observables - basic usage
 
@@ -190,8 +190,7 @@ squareNums.subscribe(x => console.log(x));
 - *HttpClient* offers a simplified client HTTP API for Angular applications
 - *HttpClient* is based on the XMLHttpRequest interface exposed by browsers
 - additional benefits of *HttpClient* include testability features, *Observable* APIs and request/response interception
-- to use *HttpClient*, we need to import Angular *HttpClientModule*, usually in the root *AppModule*
-- after we have imported *HttpClientModule*, we can inject *HttpClient* into an application class where we want to use it.
+- to use *HttpClient*, we need to import it in the root *AppModule*
 - *e.g.*:
 
     ```javascript

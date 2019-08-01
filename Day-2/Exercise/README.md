@@ -46,7 +46,7 @@
     ng generate component widget
     ```
 
-- because we userd Angular CLI, we can observe that also *app.module.ts* was updated with the new components
+- because we used Angular CLI, we can observe that also *app.module.ts* was updated with the new components
 - in the design, we can see on the top of the dashboard a navbar, containing the logo and *Logout* button
 - next step is to include into *dashboard-page* component the navbar, *blotter-view* and *fx-rates-view* and also use *bootstrap* to place them
 - so, in *dashboard-page.component.html* we will have:
