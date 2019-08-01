@@ -190,8 +190,7 @@ squareNums.subscribe(x => console.log(x));
 - *HttpClient* offers a simplified client HTTP API for Angular applications
 - *HttpClient* is based on the XMLHttpRequest interface exposed by browsers
 - additional benefits of *HttpClient* include testability features, *Observable* APIs and request/response interception
-- to use *HttpClient*, we need to import Angular *HttpClientModule*, usually in the root *AppModule*
-- after we have imported *HttpClientModule*, we can inject *HttpClient* into an application class where we want to use it.
+- to use *HttpClient*, we need to import it in the root *AppModule*
 - *e.g.*:
 
     ```javascript
