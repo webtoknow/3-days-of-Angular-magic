@@ -2,6 +2,22 @@
 
 ## Table of contents
 
+- [Exercise 0 - configure Mock Server](#exercise-0---configure-mock-server)
+- [Exercise 1 - Register page](#exercise-1---register-page)
+  - [User model](#user-model)
+  - [User service](#user-service)
+  - [Update Application Module](#update-application-module)
+  - [Register component](#register-component)
+- [Exercise 2 - Login page](#exercise-2---login-page)
+  - [Authentication service](#authentication-service)
+  - [Authentication guard](#authentication-guard)
+  - [JWT Interceptor](#jwt-interceptor)
+  - [Error Interceptor](#error-interceptor)
+  - [Update Application Module with new added classes](#update-application-module-with-new-added-classes)
+  - [Login component](#login-component)
+- [Exercise 3 - Not found page](#exercise-3---not-found-page)
+
+
 ## Exercise 0 - configure Mock Server
 
 - used to create a fake API to mock the backend data and is using [JSON Server](https://github.com/typicode/json-server)
@@ -474,7 +490,7 @@ npm start
     - if the error has 401 status, means that the user is not authorized to view the page, so he will be logged out
     - the error thrown will contain the message or the status
 
-### Update Application Module with the new added classes
+### Update Application Module with new added classes
 
 - in *app.module.ts*:
 
@@ -714,7 +730,7 @@ npm start
     - the form, its fields and validations are specified in the class
     - in *onSubmit* function, if the form is valid, we use *authenticationService.login* to send the username and password to the server. If the request is successful, we will be redirected to *Dashboard* page or the previous accessed page where we did not have access initially (*returnUrl*). Else, we will display an error message
 
-## Exercise 5 - Not found page
+## Exercise 3 - Not found page
 
 - if the user access a route that does not exist, we should display a page containing the *Page not found* message
 
