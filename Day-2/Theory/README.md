@@ -64,7 +64,7 @@
 - in order to use some functions declared in services, we need to inject that service in the component's constructor:
 
     ```javascript
-    constructor(BookService: BookService)
+    constructor(private bookService: BookService)
     ```
 
 ## Observables and RxJS
