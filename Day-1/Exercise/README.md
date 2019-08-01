@@ -206,7 +206,7 @@ h1,h2,h3,h4,h5,h6 {
 - install bootstrap dependency:
 
     ```bash
-    npm install ngx-bootstrap@3.0.1
+    npm install ngx-bootstrap
     ```
 
 - *app.module.ts*:
