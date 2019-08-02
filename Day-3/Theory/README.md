@@ -135,14 +135,37 @@
 - *e.g.*:
 
     ```javascript
-    ngOnInit(): void {
-        this.bookForm = new FormGroup({
-            name: new FormControl(this.book.name, [
-                Validators.required,
-                Validators.minLength(4)
-            ])
-        })
-    }
+    const formGroup = new FormGroup({
+        'phones': new FormArray([
+            new FormGroup({
+                'number': new FormControl('', [ Validators.required ]),
+                'type': new FormControl('Primary')
+            }),
+            new FormGroup({
+                'number': new FormControl(''),
+                'type': new FormControl('Secondary')
+            })
+        ])
+    });
+    ```
+
+    ```HTML
+    <form [formGroup]="formGroup" >
+        <h1>User Phones</h1>
+        <div class="phones"
+            *ngFor="let phoneGroup of formGroup.get('phones')['controls'];
+                    let i = index"
+            formArrayName="phones">
+            <ng-container [formGroupName]="i" >
+            <p>Phone Type: {{ phoneGroup.get('type').value }}</p>
+            <input
+                type="tel"
+                placeholder="Phone number"
+                formControlName="number"
+            />
+            </ng-container>
+        </div>
+    </form>
     ```
 
 > Note
