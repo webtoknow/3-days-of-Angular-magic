@@ -88,7 +88,7 @@
     ```
 
 - as we already observed in the last example, Angular comes with some built-in pipes like: *DatePipe*, *UpperCasePipe*, *LowerCasePipe*, *CurrencyPipe* and *PercentPipe*
-- the pipes can accept any number of parameters:
+- the pipes can accept parameters:
 - *e.g.*:
 
     ```HTML
