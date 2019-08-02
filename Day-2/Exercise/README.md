@@ -2,20 +2,57 @@
 
 ## Table of contents
 
+- [Exercise 0 - Configuration](#exercise-0---configuration)
+  - [Download all npm dependencies](#download-all-npm-dependencies)
+  - [Install and use JSON Server](#install-and-use-json-server)
 - [Exercise 1 - Create blotter-view, fx-rates-view and widget components](#exercise-1---create-blotter-view-fx-rates-view-and-widget-components)
-- [Exercise 2 - Install and use JSON Server](#exercise-2---install-and-use-json-server)
-- [Exercise 3 - Blotter View page](#exercise-3---blotter-view-page)
+
+- [Exercise 2 - Blotter View page](#exercise-2---blotter-view-page)
   - [Transaction model](#transaction-model)
   - [Trade service](#trade-service)
   - [Update Application Module](#update-application-module)
   - [Implement polling mechanism](#implement-polling-mechanism)
   - [Blotter View component](#blotter-view-component)
-- [Exercise 4 - FX Rates View page](#exercise-4---fx-rates-view-page)
+- [Exercise 3 - FX Rates View page](#exercise-3---fx-rates-view-page)
   - [Rate model](#rate-model)
   - [Widget model](#widget-model)
   - [Update Trade service](#update-trade-service)
   - [Widget component](#widget-component)
   - [FX Rates View component](#fx-rates-view-component)
+
+## Exercise 0 - Configuration 
+
+### Download all npm dependencies
+
+- go to *Day-2\Exercise\Code\fx-trading-app*:
+
+    ```bash
+    cd 3-Days-of-Angular-magic\Day-2\Exercise\Code\fx-trading-app
+    ```
+
+- run *npm install* to download all dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Install and use JSON Server
+
+- because we do not have a backend server and a link to a real database at this moment, we will simulate having some data using *JSON Server*
+- the first step is to install it (globally), using the following command:
+
+    ```bash
+    npm install json-server -g
+    ```
+
+- next, we have to start it with the 2 existing files - containing *quote* and *trade* data
+- make sure you are in the following path, where both JSON files are situated: *Day-2/Exercise/Code/fx-trading-app*
+- run these commands in separate terminal windows:
+
+    ```bash
+    json-server --watch db.trade.json --port 8210
+    json-server --watch db.quote.json --port 8220
+    ```
 
 ## Exercise 1 - Create blotter-view, fx-rates-view and widget components
 
@@ -100,25 +137,7 @@
     }
     ```
 
-## Exercise 2 - Install and use JSON Server
-
-- because we do not have a backend server and a link to a real database at this moment, we will simulate having some data using *JSON Server*
-- the first step is to install it (globally), using the following command:
-
-    ```bash
-    npm install json-server -g
-    ```
-
-- next, we have to start it with the 2 existing files - containing *quote* and *trade* data
-- make sure you are in the following path, where both JSON files are situated: *Day-2/Exercise/Code/fx-trading-app*
-- run these commands in separate terminal windows:
-
-    ```bash
-    json-server --watch db.trade.json --port 8210
-    json-server --watch db.quote.json --port 8220
-    ```
-
-## Exercise 3 - Blotter View page
+## Exercise 2 - Blotter View page
 
 ### Transaction model
 
@@ -467,7 +486,7 @@ imports: [
     - *filterBy* method does the filtering functionality - by ccyPair and/or date
     - *ngOnDestroy* unsubscribes from getting transactions
 
-## Exercise 4 - FX Rates View page
+## Exercise 3 - FX Rates View page
 
 ### Rate model
 
