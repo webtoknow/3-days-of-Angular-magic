@@ -80,7 +80,7 @@
 - for example, users prefer to see a date in a simple format like *May 15* intead of *Fri May 15 1959 00:00:00 GMT -0700 (Pacific Daylight Time)*
 - same transformations can be needed repeatedly and this is the reason we need pipes
 - pipes can be defined as **a way to write display-value transformation that we use in HTML**
-- a pipe **takes in data as input and transforms it to a desired ourput**
+- a pipe **takes in data as input and transforms it to a desired output**
 - *e.g.*:
 
     ```HTML
