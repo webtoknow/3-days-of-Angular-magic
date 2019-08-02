@@ -2,7 +2,9 @@
 
 ## Table of contents
 
-- [Exercise 0 - configure Mock Server](#exercise-0---configure-mock-server)
+- [Exercise 0 - Configuration](#exercise-0---configuration)
+  - [Download all npm dependencies](#download-all-npm-dependencies)
+  - [Configure Mock Server](#configure-mock-server)
 - [Exercise 1 - Register page](#exercise-1---register-page)
   - [User model](#user-model)
   - [User service](#user-service)
@@ -18,7 +20,23 @@
 - [Exercise 3 - Not found page](#exercise-3---not-found-page)
 
 
-## Exercise 0 - configure Mock Server
+## Exercise 0 - Configuration
+
+### Download all npm dependencies
+
+- go to *Day-3\Exercise\Code\fx-trading-app*:
+
+    ```bash
+    cd 3-Days-of-Angular-magic\Day-3\Exercise\Code\fx-trading-app
+    ```
+
+- run *npm install* to download all dependencies:
+
+    ```bash
+    npm install
+    ```
+
+### Configure Mock Server
 
 - used to create a fake API to mock the backend data and is using [JSON Server](https://github.com/typicode/json-server)
 - we will be able to start all microservices in the same time
