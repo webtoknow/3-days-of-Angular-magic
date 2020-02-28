@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { backendUrl } from '../constants';
 
-@Injectable() 
+@Injectable()
 export class AuthenticationService {
 
     constructor(

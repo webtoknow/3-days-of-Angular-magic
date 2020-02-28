@@ -155,26 +155,15 @@
       "date": 1536560103000
     },
     {
-      "username": "dana",
+      "username": "danam",
       "primaryCcy": "RON",
-      "secondaryCcy": "USD",
+      "secondaryCcy": "GBP",
       "rate": 1.3,
       "action": "BUY",
-      "notional": 12,
-      "tenor": "SP",
-      "date": 1564502996,
+      "notional": 342,
+      "tenor": "3M",
+      "date": 1582909108,
       "id": 5235
-    },
-    {
-      "username": "bogdan",
-      "primaryCcy": "RON",
-      "secondaryCcy": "EUR",
-      "rate": 1.3,
-      "action": "BUY",
-      "notional": 123,
-      "tenor": "SP",
-      "date": 1564503415,
-      "id": 5236
     }
   ]
 }

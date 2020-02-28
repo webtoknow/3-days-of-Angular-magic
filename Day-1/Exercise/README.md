@@ -23,7 +23,7 @@
     cd 3-Days-of-Angular-magic\Day-1\Exercise\Code
     ```
 
-- let's generate a new Angular project using CLI:
+- let's generate a new Angular project using CLI. When prompting the question: *Would you like to add Angular routing?*, please answer with *Y*. Also, we will use *CSS* as stylesheet format.
 
     ```bash
     ng new fx-trading-app
@@ -74,18 +74,21 @@
 
 ### Add routes
 
-- in *app.module.ts* import *RouterModule* and *Routes* from *@angular/router*:
+- in *app-routing.module.ts* import all the components you have to make them available for routing:
 
     ```JS
-    import { RouterModule, Routes } from '@angular/router';
+    import { LoginPageComponent } from './pages/login-page/login-page.component';
+    import { RegisterPageComponent } from `./pages/register-page/register-page.component`;
+    import { DashboardPageComponent } from `./pages/dashboard-page/dashboard-page.component`;
+    import { NotFoundPageComponent } from `./pages/not-found-page/not-found-page.component`;
     ```
 
-- then create routes by linking all our components:
+- then populate the *routes* array by linking all our components:
 
     ```JS
     // imports
 
-    const appRoutes: Routes = [
+    const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: LoginPageComponent },
     { path: 'register', component: RegisterPageComponent },
@@ -96,19 +99,7 @@
     // @NgModule({...})
     ```
 
-- *appRoutes* describes how to navigate through many routes
-- now we have to pass *appRoutes* to the *RouterModule.forRoot* method in the module imports to configure the router:
-
-    ```JS
-    {
-    ...
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(appRoutes),
-    ],
-    ...
-    }
-    ```
+- *routes* describes how to navigate through the app
 
 - remove the old markup from *app.component.html* and then add the *RouterOutlet* directive:
 
@@ -174,7 +165,7 @@ h1,h2,h3,h4,h5,h6 {
 
 ```JSON
 "styles": [
-  "styles.scss", // already here
+  "styles.css", // already here
   "node_modules/ngx-toastr/toastr.css" // add this
 ]
 ```
