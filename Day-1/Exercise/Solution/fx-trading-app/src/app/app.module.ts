@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -20,6 +21,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
     BsDatepickerModule.forRoot()
