@@ -19,7 +19,6 @@
   - [Login component](#login-component)
 - [Exercise 3 - Not found page](#exercise-3---not-found-page)
 
-
 ## Exercise 0 - Configuration
 
 ### Download all npm dependencies
@@ -54,21 +53,21 @@ npm start
 ```
 
 - now we can access these APIs:
-    - `/user/authenticate` - sign-in
-    - `/user/register` - register
-    - `/transactions` - get all transactions
-    - `/currencies` - get all currencies
-    - `/fx-rate` - get fx rates for specific currencies
+  - `/user/authenticate` - sign-in
+  - `/user/register` - register
+  - `/transactions` - get all transactions
+  - `/currencies` - get all currencies
+  - `/fx-rate` - get fx rates for specific currencies
 
 ## Exercise 1 - Register page
 
 ### User model
 
 - by taking a look at the register page's design, we can identify the required fields for user entity:
-    - id
-    - username
-    - email
-    - password
+  - id
+  - username
+  - email
+  - password
 - create a new file *user.ts* into *fx-trading-app\src\app\models* containing the fields above:
 
     ```JavaScript
@@ -103,9 +102,9 @@ npm start
     ```
 
 - so, the service:
-    - will be marked as injectable through *@Injectable()* adnotation
-    - will contain a constructor, in which we will inject *HTTPClient* in order to be able to make HTTP requests
-    - will contain also the *register* method, receiving an *User* object - the one we want to save in order to create a new account - which will actually do the HTTP request: a **POST** on the URL estabilished in *constants.ts* (*backendUrl.authService.register*) with *user* as *Request Body*
+  - will be marked as injectable through *@Injectable()* adnotation
+  - will contain a constructor, in which we will inject *HTTPClient* in order to be able to make HTTP requests
+  - will contain also the *register* method, receiving an *User* object - the one we want to save in order to create a new account - which will actually do the HTTP request: a **POST** on the URL estabilished in *constants.ts* (*backendUrl.authService.register*) with *user* as *Request Body*
 
 ### Update Application Module
 
@@ -141,7 +140,7 @@ npm start
             <div class="form-group flex">
                 <div class="col">
                 <label for="username">Username</label>
-                <input type="text" class="form-control form-control-sm" id="inputUsername" 
+                <input type="text" class="form-control form-control-sm" id="inputUsername"
                     formControlName="username" placeholder="username" autocomplete="username"
                     [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                 <span *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -152,7 +151,7 @@ npm start
             <div class="form-group flex">
                 <div class="col">
                 <label for="email">Email</label>
-                <input type="text" class="form-control form-control-sm" id="inputEmail" 
+                <input type="text" class="form-control form-control-sm" id="inputEmail"
                     formControlName="email" placeholder="email address"
                     [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                 <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -196,26 +195,30 @@ npm start
     ```
 
 - we can notice here:
-    - fields are grouped in a form: *[formGroup]="registerForm"*
-    - when we press on *Register*, the *onSubmit* function is triggered: *(ngSubmit)="onSubmit()"*
-    - we have some validations here:
-    - required validations:
-        - *e.g.*:
-        ```HTML
-        <span *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <span *ngIf="f.username.errors.required">Username is required!</span>
-        </span>
-        ```
-    - minimum length validations:
-        - *e.g.*:
-        ```HTML
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters!
-        </div>
-        </div>
-        ```
+  - fields are grouped in a form: *[formGroup]="registerForm"*
+  - when we press on *Register*, the *onSubmit* function is triggered: *(ngSubmit)="onSubmit()"*
+  - we have some validations here:
+  - required validations:
+    - *e.g.*:
 
-    - we have a link to *Login Page*:
+    ```HTML
+    <span *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <span *ngIf="f.username.errors.required">Username is required!</span>
+    </span>
+    ```
+
+  - minimum length validations:
+    - *e.g.*:
+
+    ```HTML
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters!
+    </div>
+    </div>
+    ```
+
+  - we have a link to *Login Page*:
+
     ```HTML
     <div class="text-container">
         <span>Already have an account?&nbsp;</span>
@@ -338,9 +341,9 @@ npm start
     ```
 
 - we can notice here:
-    - the component is declared through *@Component* adnotation, by specifying the selector, template and style files
-    - the form, its fields and validations are specified in the class
-    - in *onSubmit* function, if the form is valid, we use *userService.register* to send the entity to be saved. If the request is successful, We display a message and redirect the user to *login* page, but if it is not, we just display ond appropriate message
+  - the component is declared through *@Component* adnotation, by specifying the selector, template and style files
+  - the form, its fields and validations are specified in the class
+  - in *onSubmit* function, if the form is valid, we use *userService.register* to send the entity to be saved. If the request is successful, We display a message and redirect the user to *login* page, but if it is not, we just display ond appropriate message
 
 ## Exercise 2 - Login page
 
@@ -359,7 +362,7 @@ npm start
     import { map } from 'rxjs/operators';
     import { backendUrl } from '../constants';
 
-    @Injectable() 
+    @Injectable()
     export class AuthenticationService {
 
         constructor(
@@ -388,11 +391,11 @@ npm start
     ```
 
 - this service:
-    - will be marked as injectable
-    - in the constructor, we will inject *HTTPClient* in order to have the possibility to make HTTP requests
-    - will contain 2 methods: *login* and *logout*
-    - *login* method will receive as parameters 2 strings, username and password. It will make a *POST* HTTP request to the API responsible for this (*backendUrl.authService.authenticate*, as declared in *constants*) and will send a *Request Body* as on object containing these 2 properties. If they are valid, the backend will put a token on the response and we will set the *currentUser* on *localStorage* to log in
-    - *logout* method will remove the *currentUser* property from localStorage
+  - will be marked as injectable
+  - in the constructor, we will inject *HTTPClient* in order to have the possibility to make HTTP requests
+  - will contain 2 methods: *login* and *logout*
+  - *login* method will receive as parameters 2 strings, username and password. It will make a *POST* HTTP request to the API responsible for this (*backendUrl.authService.authenticate*, as declared in *constants*) and will send a *Request Body* as on object containing these 2 properties. If they are valid, the backend will put a token on the response and we will set the *currentUser* on *localStorage* to log in
+  - *logout* method will remove the *currentUser* property from localStorage
 
 ### Authentication guard
 
@@ -422,12 +425,12 @@ npm start
     }
     ```
 
-- after creating the class, we need to update the some routes in *app.module.ts* to be private:
+- after creating the class, we need to update the some routes in *app-routing.module.ts* to be private:
 
     ```JavaScript
     import { AuthGuard } from 'src/app/guards/auth.guard';
 
-    const appRoutes: Routes = [
+    const routes: Routes = [
         { path: '', redirectTo: '/login', pathMatch: 'full', canActivate: [AuthGuard] },
         { path: 'login', component: LoginPageComponent },
         { path: 'register', component: RegisterPageComponent },
@@ -505,23 +508,23 @@ npm start
     ```
 
 - so, the way we handle the errors is:
-    - if the error has 401 status, means that the user is not authorized to view the page, so he will be logged out
-    - the error thrown will contain the message or the status
+  - if the error has 401 status, means that the user is not authorized to view the page, so he will be logged out
+  - the error thrown will contain the message or the status
 
 ### Update Application Module with new added classes
 
 - in *app.module.ts*:
 
-    - include *Authentication Service*:
+  - include *Authentication Service*:
 
-        ```JavaScript
-        import { AuthenticationService } from 'src/app/services/authentication.service';
+    ```JavaScript
+    import { AuthenticationService } from 'src/app/services/authentication.service';
 
-        providers: [
-            ...
-            AuthenticationService,
-            ...
-        ```
+    providers: [
+        ...
+        AuthenticationService,
+        ...
+    ```
 
     - include *Authorization Guard*:
 
@@ -580,8 +583,8 @@ npm start
             <div class="form-group flex">
                 <i class="fa fa-lock icon" aria-hidden="true"></i>
                 <div class="col">
-                <input type="password" class="form-control form-control-sm" formControlName="password" 
-                    placeholder="password" autocomplete="current-password" id="password" 
+                <input type="password" class="form-control form-control-sm" formControlName="password"
+                    placeholder="password" autocomplete="current-password" id="password"
                     [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required!</div>
@@ -601,9 +604,9 @@ npm start
     ```
 
 - Here we have:
-    - a form containing *username* and *password* fields, grouped in *[formGroup]="loginForm"*
-    - when we press on *Login*, the *onSubmit* function is triggered: *(ngSubmit)="onSubmit()"*
-    - we have here required validations:
+  - a form containing *username* and *password* fields, grouped in *[formGroup]="loginForm"*
+  - when we press on *Login*, the *onSubmit* function is triggered: *(ngSubmit)="onSubmit()"*
+  - we have here required validations:
     - *e.g.*:
 
         ```HTML
@@ -732,7 +735,7 @@ npm start
         .subscribe(
             data => {
             this.router.navigate([this.returnUrl]);
-            }, 
+            },
             error => {
             this.toastr.error(error);
             this.loading = false;
@@ -744,9 +747,9 @@ npm start
     ```
 
 - we can observe here:
-    - the component is declared through *@Component* adnotation
-    - the form, its fields and validations are specified in the class
-    - in *onSubmit* function, if the form is valid, we use *authenticationService.login* to send the username and password to the server. If the request is successful, we will be redirected to *Dashboard* page or the previous accessed page where we did not have access initially (*returnUrl*). Else, we will display an error message
+  - the component is declared through *@Component* adnotation
+  - the form, its fields and validations are specified in the class
+  - in *onSubmit* function, if the form is valid, we use *authenticationService.login* to send the username and password to the server. If the request is successful, we will be redirected to *Dashboard* page or the previous accessed page where we did not have access initially (*returnUrl*). Else, we will display an error message
 
 ## Exercise 3 - Not found page
 
@@ -762,8 +765,8 @@ npm start
     ```
 
 - in this page, we display:
-    - an image with *404 Not found page* message
-    - an appropriate message
+  - an image with *404 Not found page* message
+  - an appropriate message
 
 - **not-found-page.component.css**:
 

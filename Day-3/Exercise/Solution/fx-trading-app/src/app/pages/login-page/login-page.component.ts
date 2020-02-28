@@ -56,7 +56,7 @@ export class LoginPageComponent implements OnInit {
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
-        }, 
+        },
         error => {
           this.toastr.error(error);
           this.loading = false;
