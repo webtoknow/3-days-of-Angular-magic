@@ -56,18 +56,6 @@
 
 ## Exercise 1 - Create blotter-view, fx-rates-view and widget components
 
-- go to *Day-2\Exercise\Code\fx-trading-app*:
-
-    ```bash
-    cd 3-Days-of-Angular-magic\Day-2\Exercise\Code\fx-trading-app
-    ```
-
-- run *npm install* to download all dependencies:
-
-    ```bash
-    npm install
-    ```
-
 - from design mockup, we can see that it can be divided in 2 big sections: **FX Rates View** and **Blotter View**. Also, the first one contains many widgets looking the same, so this can be also splitted into **Widget** components
 - so, *dashboard-page* component will use 3 smaller components which will need to be created:
     - *blotter-view*
