@@ -23,7 +23,7 @@
     cd 3-Days-of-Angular-magic\Day-1\Exercise\Code
     ```
 
-- let's generate a new Angular project using CLI:
+- let's generate a new Angular project using CLI. When prompting the question: *Would you like to add Angular routing?*, please answer with *Y*. Also, we will use *CSS* as stylesheet format.
 
     ```bash
     ng new fx-trading-app
