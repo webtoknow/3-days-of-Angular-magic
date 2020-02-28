@@ -20,7 +20,7 @@
   - [Widget component](#widget-component)
   - [FX Rates View component](#fx-rates-view-component)
 
-## Exercise 0 - Configuration 
+## Exercise 0 - Configuration
 
 ### Download all npm dependencies
 
@@ -58,9 +58,9 @@
 
 - from design mockup, we can see that it can be divided in 2 big sections: **FX Rates View** and **Blotter View**. Also, the first one contains many widgets looking the same, so this can be also splitted into **Widget** components
 - so, *dashboard-page* component will use 3 smaller components which will need to be created:
-    - *blotter-view*
-    - *fx-rates-view*
-    - *widget*
+  - *blotter-view*
+  - *fx-rates-view*
+  - *widget*
 
 - use CLI to create these 3 new components as children of *dashboard-page*:
 
@@ -193,7 +193,7 @@
 
 ### Update Application Module
 
-- in app.module.ts, include *Trade Service*:
+- in *app.module.ts*, include *Trade Service*:
 
 ```JavaScript
 import { TradeService } from './services/trade.service';
@@ -205,7 +205,7 @@ providers: [
 ]
 ```
 
-- add *Forms* module in order to use them:
+- in *app.module.ts*, add also *Forms* module in order to use them:
 
 ```JavaScript
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -272,12 +272,12 @@ imports: [
         <div class="flex-vertical-centered filter-group">
         <span for="dateFilter">Date&nbsp;&nbsp;</span>
         <div class="input-group input-group-sm">
-            <input 
-            type="text" 
-            class="form-control form-control-sm" 
-            placeholder="Please select&nbsp;" 
-            [(ngModel)]="filter.date" 
-            (ngModelChange)="filterBy($event)" 
+            <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="Please select&nbsp;"
+            [(ngModel)]="filter.date"
+            (ngModelChange)="filterBy($event)"
             [bsConfig]="{ dateInputFormat: 'DD/MM/YYYY' }"
             bsDatepicker>
             <div class="input-group-append">
@@ -331,14 +331,14 @@ imports: [
     ```
 
 - here we display a table containing the following information from all transactions got from the backend:
-    - id
-    - username
-    - ccyPair
-    - rate
-    - action
-    - notional
-    - tenor
-    - date
+  - id
+  - username
+  - ccyPair
+  - rate
+  - action
+  - notional
+  - tenor
+  - date
 
 - **blotter-view.component.css**:
 
@@ -396,7 +396,7 @@ imports: [
 
     ```JavaScript
     import { Component, OnInit } from '@angular/core';
-    import { Transaction, SortType } from 'src/app/models/transaction';
+    import { Transaction } from 'src/app/models/transaction';
     import { TradeService } from '../../../services/trade.service';
     import { Subject } from 'rxjs';
     import { takeUntil } from 'rxjs/operators';
@@ -413,7 +413,7 @@ imports: [
         ccyPair: '',
         date: ''
     };
-    
+
     private unsubscribe = new Subject();
     private transactions: Transaction[] = [];
     private initialTransactions: Transaction[] = [];
@@ -466,13 +466,13 @@ imports: [
 
 - so, we have the following behavior:
 
-    - when we initiate this component (*ngOnInit*), we should call *startPolling* method, which calls *tradeService.getTransactionsPolling()*
-    - after getting all transactions, *startPolling* method:
-        - adds *ccyPair* property to all transactions by concatenating *primaryCCY* and *secondaryCCY*
-        - gets all *currenciesPairs* to fill in the filter select
-        - applies default sort and filter (with no criteria)
-    - *filterBy* method does the filtering functionality - by ccyPair and/or date
-    - *ngOnDestroy* unsubscribes from getting transactions
+  - when we initiate this component (*ngOnInit*), we should call *startPolling* method, which calls *tradeService.getTransactionsPolling()*
+  - after getting all transactions, *startPolling* method:
+    - adds *ccyPair* property to all transactions by concatenating *primaryCCY* and *secondaryCCY*
+    - gets all *currenciesPairs* to fill in the filter select
+    - applies default sort and filter (with no criteria)
+  - *filterBy* method does the filtering functionality - by ccyPair and/or date
+  - *ngOnDestroy* unsubscribes from getting transactions
 
 ## Exercise 3 - FX Rates View page
 
@@ -512,7 +512,7 @@ imports: [
 
 - we need some more methods in *trade.service.ts*:
 
-    - one for saving the transaction (if the user press *Sell* or *Buy* buttons):
+  - one for saving the transaction (if the user press *Sell* or *Buy* buttons):
 
     ```JavaScript
     saveTransaction(transaction: Transaction) {
@@ -520,7 +520,7 @@ imports: [
     }
     ```
 
-    - in order to add a new widget, the user should pick 2 currencies (*Primary* and *Secondary*), then he will be able to view the rates also. For this purpose, 2 new methods will be created:
+  - in order to add a new widget, the user should pick 2 currencies (*Primary* and *Secondary*), then he will be able to view the rates also. For this purpose, 2 new methods will be created:
 
     ```JavaScript
     import { Rate } from 'src/app/models/rate';
@@ -534,7 +534,7 @@ imports: [
     }
     ```
 
-    - as we have simulated a real-time behavior for getting and displaying the transactions, we will do the same for getting FX Rates:
+  - as we have simulated a real-time behavior for getting and displaying the transactions, we will do the same for getting FX Rates:
 
     ```JavaScript
     getFxRatePolling(primaryCcy: string, secondaryCcy: string) {
@@ -626,10 +626,10 @@ imports: [
 
 - we can notice here:
 
-    - a widget can be deleted by pressing the close icon from top-right corner of it
-    - there are 2 types of widgets:
-        - one which allows adding a new currency pair to let the user follow SELL and BUY rates. This contains 2 dropdowns where *Primary* and *Secondary* currencies can be selected - the ones obtained by calling the backend through *getCurrencies()* method from *trade.service.ts*
-        - the other which allows saving a transaction. For this, the user have to enter the amount he wants to trade, the tenor (*SP* - now, *1M* - in a month or *3M* - in three months) and then press on the button which describes the action he want to do: *Sell* or *Buy*
+  - a widget can be deleted by pressing the close icon from top-right corner of it
+  - there are 2 types of widgets:
+    - one which allows adding a new currency pair to let the user follow SELL and BUY rates. This contains 2 dropdowns where *Primary* and *Secondary* currencies can be selected - the ones obtained by calling the backend through *getCurrencies()* method from *trade.service.ts*
+    - the other which allows saving a transaction. For this, the user have to enter the amount he wants to trade, the tenor (*SP* - now, *1M* - in a month or *3M* - in three months) and then press on the button which describes the action he want to do: *Sell* or *Buy*
 
 - **widget.component.css**:
 
@@ -756,7 +756,7 @@ imports: [
     unsubscribe = new Subject();
     buyRateTrend: string;
     sellRateTrend: string;
-    
+
     @Input() widget: Widget;
     @Input() index: number;
     @Input() currencies: string[];
@@ -793,9 +793,9 @@ imports: [
         }
         else {
         this.toastr.error('Please fill in both Amount and Tenor!');
-        } 
+        }
     }
-    
+
     onBuy() {
         const { notional, tenor } = this.widget;
         if (notional && tenor) {
@@ -821,7 +821,7 @@ imports: [
     onCCYChange() {
         this.switchCCY()
     }
-    
+
     switchCCY() {
         const tempCCY = this.widget.primaryCcy;
         this.widget.primaryCcy = this.widget.secondaryCcy;
@@ -864,12 +864,12 @@ imports: [
     ```
 
 - in *Widget Component*, we can see many functionalities implemented:
-    - *onDelete*: when the user removes a widget
-    - *onSell*: save the transaction with *sell* action
-    - *onBuy*: save the transaction with *buy* action
-    - *onCCYChange*: switch the primary currency with the secondary one
-    - *startPolling*: get FX Rates through polling to simulate real-time behavior
-    - *onPickCurrency*: when a new widget is added with primary and secondary currencies, start polling FX Rates
+  - *onDelete*: when the user removes a widget
+  - *onSell*: save the transaction with *sell* action
+  - *onBuy*: save the transaction with *buy* action
+  - *onCCYChange*: switch the primary currency with the secondary one
+  - *startPolling*: get FX Rates through polling to simulate real-time behavior
+  - *onPickCurrency*: when a new widget is added with primary and secondary currencies, start polling FX Rates
 
 ### FX Rates View component
 
@@ -897,8 +897,8 @@ imports: [
 
 - so, as we can see:
 
-    - we use *Widget* Component (*app-widget*) for all widgets we have
-    - we have the possibility to add a new widget by clicking on a button
+  - we use *Widget* Component (*app-widget*) for all widgets we have
+  - we have the possibility to add a new widget by clicking on a button
 
 - **fx-rates-view.component.css**:
 
@@ -976,6 +976,6 @@ imports: [
     ```
 
 - in this class:
-    - we get all currencies from backend at initialization
-    - when a new widget is added, a new *Widget* component is created with default/empty values
-    - when a widget is removed, *onDeleteWidget* method is called, which uses the JavaScript *splice* method
+  - we get all currencies from backend at initialization
+  - when a new widget is added, a new *Widget* component is created with default/empty values
+  - when a widget is removed, *onDeleteWidget* method is called, which uses the JavaScript *splice* method

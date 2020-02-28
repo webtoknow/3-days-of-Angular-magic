@@ -153,6 +153,28 @@
       "notional": 555.23,
       "tenor": "3M",
       "date": 1536560103000
+    },
+    {
+      "username": "dana.munteanu",
+      "primaryCcy": "USD",
+      "secondaryCcy": "EUR",
+      "rate": 1.2,
+      "action": "SELL",
+      "notional": 432,
+      "tenor": "SP",
+      "date": 1582906373,
+      "id": 5235
+    },
+    {
+      "username": "dana.munteanu",
+      "primaryCcy": "USD",
+      "secondaryCcy": "EUR",
+      "rate": 1.3,
+      "action": "BUY",
+      "notional": 432,
+      "tenor": "SP",
+      "date": 1582906380,
+      "id": 5236
     }
   ]
 }
