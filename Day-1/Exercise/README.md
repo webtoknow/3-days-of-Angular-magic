@@ -170,7 +170,7 @@ h1,h2,h3,h4,h5,h6 {
 ]
 ```
 
-- we will also should update *app.module.ts* to add *ToastrModule*:
+- we will also update *app.module.ts* by adding *ToastrModule*:
 
     ```JavaScript
     import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
