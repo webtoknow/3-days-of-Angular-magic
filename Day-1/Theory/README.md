@@ -216,7 +216,7 @@ class Joke {
 - in order to use it, we need to associate the path with the component we want to access when navigating to that route:
 
 ```javascript
-const appRoutes: Routes = [
+const routes: Routes = [
     { path: 'books, component: BookListComponent }
 ]
 ```
