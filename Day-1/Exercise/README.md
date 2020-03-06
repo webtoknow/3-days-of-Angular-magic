@@ -36,7 +36,7 @@
     ng serve
     ```
 
-- you should be now able to see your our first Angular application on http://localhost:4200/
+- you should be now able to see your first Angular application on http://localhost:4200/
 
 ## Exercise 1 - Pages, Routing and Navigation
 
