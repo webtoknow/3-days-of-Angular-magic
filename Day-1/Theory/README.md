@@ -3,6 +3,7 @@
 ## Table of contents
 
 - [Introduction and Architecture](#introduction-and-architecture)
+- [Why and how to split UI into components](#why-and-how-to-split-UI-into-components)
 - [Components and Templates](#components-and-templates)
   - [Component Lifecycle](#component-lifecycle)
   - [Interpolation](#interpolation)
@@ -36,6 +37,21 @@
 - *Router* service provided by Angular helps us define the link between URL and views
 
 ![Angular-Architecture](img/Angular_architecture.jpg)
+
+## Why and how to split UI into components
+
+- there is no rule saying that it is forbidden to have only one component in our application, but:
+  - performance will be affected because every state change will re-render the entire application
+  - code reusability will not be easy
+  - state will be a huge object and it will be a real challenge to follow the impact of event handlers
+  - working in a team will be terrible because of the code-conflicts
+- to avoid these and many other problems, we should split our UI into many components
+- we will know when to start splitting because we will experience at least one of the enumerated issues above
+- we should be also careful because every split (and abstraction) of our code comes with a cost: it can not be easy to merge them into one functional piece
+- basically, we should break up our components into smaller ones, but not until facing some real problems with our growing component
+- here we have an example about how we splitted our FX-Trading dashboard into components:
+
+![Components](img/components.png "Components")
 
 ## Components and Templates
 
