@@ -6,8 +6,11 @@
 - [Exercise 1 - Pages, Routing and Navigation](#exercise-1---pages-routing-and-navigation)
   - [Create pages](#create-pages)
   - [Add routes](#add-routes)
-  - [Fill in global style file](#fill-in-global-style-file)
-  - [Add Bootstrap, Datepicker and Fontawesome](#add-bootstrap-datepicker-and-fontawesome)
+- [Exercise 2 - Update favicon](#exercise-2---update-favicon)
+- [Exercise 3 - Add global styles](#exercise-3---add-global-styles)
+- [Exercise 4 - Add Bootstrap](#exercise-4---add-bootstrap)
+- [Exercise 5 - Add Datepicker](#exercise-5---add-datepicker)
+- [Exercise 6 - Add Fontawesome](#exercise-6---add-fontawesome)
 
 ## Exercise 0 - Initial Setup
 
@@ -78,9 +81,9 @@
 
     ```JS
     import { LoginPageComponent } from './pages/login-page/login-page.component';
-    import { RegisterPageComponent } from `./pages/register-page/register-page.component`;
-    import { DashboardPageComponent } from `./pages/dashboard-page/dashboard-page.component`;
-    import { NotFoundPageComponent } from `./pages/not-found-page/not-found-page.component`;
+    import { RegisterPageComponent } from './pages/register-page/register-page.component';
+    import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+    import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
     ```
 
 - then populate the *routes* array by linking all our components:
@@ -107,7 +110,34 @@
 <router-outlet></router-outlet>
 ```
 
-### Fill in global style file
+## Exercise 2 - Update favicon
+
+- let's update favicon by first deleting _favicon.ico_ file from _fx-trading-app_ and updating _angular.json_ by deleting `src/favicon.ico` line
+
+- download [fav icon package](https://github.com//WebToLearn/3-days-of-Angular-magic/raw/master/Design/fx-trading-favicon-package.zip) and unzip it, then copy and replace all files to _assets_ folder
+
+- replace the following code in the head section of _src/index.html_ file with:
+
+    ```html
+    <meta charset="utf-8">
+    <title>FxTradingApp</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+
+    <link rel="icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Fx Trading application" />
+    ```
+
+## Exercise 3 - Add global styles
 
 - let's update the global style file, *styles.css*, which contains the style used in the whole application:
 
@@ -130,6 +160,7 @@ h1,h2,h3,h4,h5,h6 {
 .btn-link {
     color: #3496F0;
 }
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: #F2F2F2;
 }
@@ -184,21 +215,27 @@ h1,h2,h3,h4,h5,h6 {
     ...
     ```
 
-### Add Bootstrap, Datepicker and Fontawesome
+## Exercise 4 - Add Bootstrap
 
-- *index.html*:
+- install Bootstrap dependency:
 
-    ```HTML
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-    ```
+  ```bash
+  npm install ngx-bootstrap
+  ```
 
-- install bootstrap dependency:
+- add this in *head* section of *index.html*:
+  
+  ```HTML
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  ```
 
-    ```bash
-    npm install ngx-bootstrap
-    ```
+## Exercise 5 - Add Datepicker
+
+- add this in *head* section of *index.html*:
+
+  ```HTML
+   <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+  ```
 
 - *app.module.ts*:
 
@@ -211,3 +248,12 @@ h1,h2,h3,h4,h5,h6 {
     ]
 
     ```
+
+## Exercise 6 - Add Fontawesome
+
+- add this in *head* section of *index.html*:
+
+  ```HTML
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  crossorigin="anonymous">
+  ```

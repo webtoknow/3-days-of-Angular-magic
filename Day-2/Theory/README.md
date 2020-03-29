@@ -3,21 +3,21 @@
 ## Table of contents
 
 - [Services and Dependency Injection](#services-and-dependency-injection)
-    - [Create and register an injectable service](#create-and-register-an-injectable-service)
-    - [Injecting services](#injecting-services)
+  - [Create and register an injectable service](#create-and-register-an-injectable-service)
+  - [Injecting services](#injecting-services)
 - [Observables and RxJS](#observables-and-rxjs)
-    - [Observables](#observables)
-    - [Push vs pull](#push-vs-pull)
-    - [Observables - basic usage](#observables---basic-usage)
-    - [Defining observers](#defining-observers)
-    - [Subscribing to observables](#subscribing-to-observables)
-    - [RxJS](#rxjs)
+  - [Observables](#observables)
+  - [Push vs pull](#push-vs-pull)
+  - [Observables - basic usage](#observables---basic-usage)
+  - [Defining observers](#defining-observers)
+  - [Subscribing to observables](#subscribing-to-observables)
+  - [RxJS](#rxjs)
 - [HttpClient](#httpclient)
 
 ## Services and Dependency Injection
 
 - Angular has its own Dependency Injection (DI) framework used in the design of applications to increase their efficiency and modularity
-- Dependencies are services or objects that a class need to perform its purpose
+- dependencies are services or objects that a class need to perform its purpose
 - DI is a coding pattern in which a class asks for dependencies from external sources rather than creating them itself
 
 ### Create and register an injectable service
@@ -27,7 +27,7 @@
 - *e.g.*:
 
     ```javascript
-    import { Injectable } from @angular/core;
+    import { Injectable } from '@angular/core';
     import { BOOKS } from './mock-books';
 
     @Injectable({
@@ -82,13 +82,13 @@
 
 - push and pull are two different ways that describe how a *data producer* communicates with the *data consumer*
 - **Pull**:
-    - the data-consumer decides when it get's data from the data-producer
-    - the producer is unaware of when data will be delivered to the consumer
-    - **every JavaScript function uses the pull**: the function is a data-producer and the call of that function is consuming it
+  - the data-consumer decides when it get's data from the data-producer
+  - the producer is unaware of when data will be delivered to the consumer
+  - **every JavaScript function uses the pull**: the function is a data-producer and the call of that function is consuming it
 - **Push**:
-    - the data-producer decides when the consumer gets the data
-    - **promises are the most common way of push in JavaScript**: a promise is the producer and delivers a resolved value to the registered callbacks, which are the consumers
-    - **observables are the new way of pushing data in JavaScript**: an observable is a producer of multiple values, pushing them to subscribers
+  - the data-producer decides when the consumer gets the data
+  - **promises are the most common way of push in JavaScript**: a promise is the producer and delivers a resolved value to the registered callbacks, which are the consumers
+  - **observables are the new way of pushing data in JavaScript**: an observable is a producer of multiple values, pushing them to subscribers
 
 ### Observables - basic usage
 
@@ -99,9 +99,9 @@
 ### Defining observers
 
 - an observer can send three types of notifications:
-    - **next**: required, a handler for each delivered value
-    - **error**: optional, a handler for an error notification
-    - **complete**: optional, a handle for the execution-complete notification
+  - **next**: required, a handler for each delivered value
+  - **error**: optional, a handler for an error notification
+  - **complete**: optional, a handle for the execution-complete notification
 
 - *e.g.*:
 
@@ -139,11 +139,11 @@
 - **RxJS (Reactive Externsions for JavaScript)** is a library for reactive programming using observables
 - RxJS provides an implementation of the Observable type, which is needed until the type becomes part of the language and until browsers supports it
 - the library provides functions for creating and working with observables, such as:
-    - converting existing code for async operations into observables
-    - iterating through the values in a stream
-    - mapping values to different types
-    - filtering streams
-    - composing multiple streams
+  - converting existing code for async operations into observables
+  - iterating through the values in a stream
+  - mapping values to different types
+  - filtering streams
+  - composing multiple streams
 - *e.g.*:
 
     ```javascript
@@ -185,8 +185,8 @@ squareNums.subscribe(x => console.log(x));
 
 - most Front-End applications communicate with Back-End services over HTTP protocol
 - modern browsers support 2 APIs for making HTTP requests:
-    - *XMLHttpRequest* interface
-    - *fetch()* API
+  - *XMLHttpRequest* interface
+  - *fetch()* API
 - *HttpClient* offers a simplified client HTTP API for Angular applications
 - *HttpClient* is based on the XMLHttpRequest interface exposed by browsers
 - additional benefits of *HttpClient* include testability features, *Observable* APIs and request/response interception
