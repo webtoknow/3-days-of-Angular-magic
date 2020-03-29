@@ -6,8 +6,10 @@
 - [Exercise 1 - Pages, Routing and Navigation](#exercise-1---pages-routing-and-navigation)
   - [Create pages](#create-pages)
   - [Add routes](#add-routes)
-  - [Fill in global style file](#fill-in-global-style-file)
-  - [Add Bootstrap, Datepicker and Fontawesome](#add-bootstrap-datepicker-and-fontawesome)
+- [Exercise 2 - Add global styles](#exercise-2---add-global-styles)
+- [Exercise 3 - Add Bootstrap](#exercise-3---add-bootstrap)
+- [Exercise 4 - Add Datepicker](#exercise-4---add-datepicker)
+- [Exercise 5 - Add Fontawesome](#exercise-5---add-fontawesome)
 
 ## Exercise 0 - Initial Setup
 
@@ -107,7 +109,7 @@
 <router-outlet></router-outlet>
 ```
 
-### Fill in global style file
+## Exercise 2 - Add global styles
 
 - let's update the global style file, *styles.css*, which contains the style used in the whole application:
 
@@ -130,6 +132,7 @@ h1,h2,h3,h4,h5,h6 {
 .btn-link {
     color: #3496F0;
 }
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: #F2F2F2;
 }
@@ -184,21 +187,27 @@ h1,h2,h3,h4,h5,h6 {
     ...
     ```
 
-### Add Bootstrap, Datepicker and Fontawesome
+## Exercise 3 - Add Bootstrap
 
-- *index.html*:
+- install Bootstrap dependency:
 
-    ```HTML
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-    ```
+  ```bash
+  npm install ngx-bootstrap
+  ```
 
-- install bootstrap dependency:
+- add this in *head* section of *index.html*:
+  
+  ```HTML
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  ```
 
-    ```bash
-    npm install ngx-bootstrap
-    ```
+## Exercise 4 - Add Datepicker
+
+- add this in *head* section of *index.html*:
+
+  ```HTML
+   <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+  ```
 
 - *app.module.ts*:
 
@@ -211,3 +220,12 @@ h1,h2,h3,h4,h5,h6 {
     ]
 
     ```
+
+## Exercise 5 - Add Fontawesome
+
+- add this in *head* section of *index.html*:
+
+  ```HTML
+  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  crossorigin="anonymous">
+  ```
