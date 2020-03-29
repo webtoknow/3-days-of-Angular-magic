@@ -81,9 +81,9 @@
 
     ```JS
     import { LoginPageComponent } from './pages/login-page/login-page.component';
-    import { RegisterPageComponent } from `./pages/register-page/register-page.component`;
-    import { DashboardPageComponent } from `./pages/dashboard-page/dashboard-page.component`;
-    import { NotFoundPageComponent } from `./pages/not-found-page/not-found-page.component`;
+    import { RegisterPageComponent } from './pages/register-page/register-page.component';
+    import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+    import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
     ```
 
 - then populate the *routes* array by linking all our components:
