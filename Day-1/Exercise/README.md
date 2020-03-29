@@ -6,10 +6,11 @@
 - [Exercise 1 - Pages, Routing and Navigation](#exercise-1---pages-routing-and-navigation)
   - [Create pages](#create-pages)
   - [Add routes](#add-routes)
-- [Exercise 2 - Add global styles](#exercise-2---add-global-styles)
-- [Exercise 3 - Add Bootstrap](#exercise-3---add-bootstrap)
-- [Exercise 4 - Add Datepicker](#exercise-4---add-datepicker)
-- [Exercise 5 - Add Fontawesome](#exercise-5---add-fontawesome)
+- [Exercise 2 - Update favicon](#exercise-2---update-favicon)
+- [Exercise 3 - Add global styles](#exercise-3---add-global-styles)
+- [Exercise 4 - Add Bootstrap](#exercise-4---add-bootstrap)
+- [Exercise 5 - Add Datepicker](#exercise-5---add-datepicker)
+- [Exercise 6 - Add Fontawesome](#exercise-6---add-fontawesome)
 
 ## Exercise 0 - Initial Setup
 
@@ -109,7 +110,9 @@
 <router-outlet></router-outlet>
 ```
 
-## Exercise 2 - Add global styles
+## Exercise 2 - Update favicon
+
+## Exercise 3 - Add global styles
 
 - let's update the global style file, *styles.css*, which contains the style used in the whole application:
 
@@ -187,7 +190,7 @@ h1,h2,h3,h4,h5,h6 {
     ...
     ```
 
-## Exercise 3 - Add Bootstrap
+## Exercise 4 - Add Bootstrap
 
 - install Bootstrap dependency:
 
@@ -201,7 +204,7 @@ h1,h2,h3,h4,h5,h6 {
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
   ```
 
-## Exercise 4 - Add Datepicker
+## Exercise 5 - Add Datepicker
 
 - add this in *head* section of *index.html*:
 
@@ -221,7 +224,7 @@ h1,h2,h3,h4,h5,h6 {
 
     ```
 
-## Exercise 5 - Add Fontawesome
+## Exercise 6 - Add Fontawesome
 
 - add this in *head* section of *index.html*:
 
