@@ -2,258 +2,106 @@
 
 ## Table of contents
 
+- [General indications](#general-indications)
 - [Exercise 0 - Initial Setup](#exercise-0---initial-setup)
 - [Exercise 1 - Pages, Routing and Navigation](#exercise-1---pages-routing-and-navigation)
   - [Create pages](#create-pages)
   - [Add routes](#add-routes)
 - [Exercise 2 - Update favicon](#exercise-2---update-favicon)
 - [Exercise 3 - Add global styles](#exercise-3---add-global-styles)
-- [Exercise 4 - Add Bootstrap](#exercise-4---add-bootstrap)
-- [Exercise 5 - Add Datepicker](#exercise-5---add-datepicker)
-- [Exercise 6 - Add Fontawesome](#exercise-6---add-fontawesome)
+- [Exercise 4 - Add Fontawesome](#exercise-4---add-fontawesome)
+- [Exercise 5 - Add Bootstrap](#exercise-5---add-bootstrap)
+- [Exercise 6 - Add Datepicker](#exercise-6---add-datepicker)
+- [Exercise 7 - Add Alerts package](#exercise-7---add-alerts-package)
+
+## General indications
+
+🔥 The working folder for this day will be _Day-1\Exercise\Code_. T
+
+🔥 You can find the exercises solutions for this day at _Day-1\Exercise\Solution_.
+
+🔥 This rocket 🚀 will be followed by the statement of the exercise.
+
+🔥 To help you to code without too many tears, 🎁 means that we are providing some hints to you.
 
 ## Exercise 0 - Initial Setup
 
-- install [Angular CLI](https://cli.angular.io/):
+🚀 Let's do the first step to build our first Angular application. We should start generating a new project with Angular and Typescript.
 
-    ```bash
-    npm install -g @angular/cli
-    ```
+  🎁 One very easy method is to use [Angular CLI](https://cli.angular.io/). You first should install it via *npm*.
 
-- go to *Day-1\Exercise\Code*:
+  🎁 Then, use *Angular CLI* it to generate your new project. You should allow adding *Angular routing* and use *CSS* as stylesheet format.
 
-    ```bash
-    cd 3-Days-of-Angular-magic\Day-1\Exercise\Code
-    ```
-
-- let's generate a new Angular project using CLI. When prompting the question: *Would you like to add Angular routing?*, please answer with *Y*. Also, we will use *CSS* as stylesheet format.
-
-    ```bash
-    ng new fx-trading-app
-    ```
-
-- start the project:
-
-    ```bash
-    cd fx-trading-app
-    ng serve
-    ```
-
-- you should be now able to see your first Angular application on http://localhost:4200/
+  🎁 After generating the project, you should start it. *npm start* will do the job.
 
 ## Exercise 1 - Pages, Routing and Navigation
 
 ### Create pages
 
-- go to *Day-1\Exercise\Code\fx-trading-app*:
+🚀 Our application will have many pages. Can you identify these ones based on the design? Let's create them as dummy Angular components.
 
-    ```bash
-    cd 3-Days-of-Angular-magic\Day-1\Exercise\Code\fx-trading-app
-    ```
+  🎁 A very important thing when you write code is to be organized. So put these newly-created components into a new folder named *pages* under *fx-trading-app\src\app*.
 
-- install *ngx-toastr* to see the alerts in a nice way:
-
-    ```bash
-    npm install ngx-toastr
-    npm install @angular/animations
-    ```
-
-- create a folder for our views in *fx-trading-app\src\app*:
-
-    ```bash
-    cd src\app
-    mkdir pages
-    cd pages
-    ```
-
-- generate page components using CLI:
-
-    ```bash
-    ng generate component dashboard-page
-    ng generate component login-page
-    ng generate component not-found-page
-    ng generate component register-page
-    ```
+  🎁 You can generate the components using *ng generate component* CLI command.
 
 ### Add routes
 
-- in *app-routing.module.ts* import all the components you have to make them available for routing:
+🚀 You should also can navigate through the pages you just created. So let's create now the navigation part.
 
-    ```JS
-    import { LoginPageComponent } from './pages/login-page/login-page.component';
-    import { RegisterPageComponent } from './pages/register-page/register-page.component';
-    import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
-    import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-    ```
+  🎁 You already have a file that deals with routes: *app-routing.module.ts*.
 
-- then populate the *routes* array by linking all our components:
+  🎁 The first thing you need to do is to import all the components you have to make them available for routing and then populate the *routes* array by linking all your components.
 
-    ```JS
-    // imports
-
-    const routes: Routes = [
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: 'login', component: LoginPageComponent },
-    { path: 'register', component: RegisterPageComponent },
-    { path: 'dashboard', component: DashboardPageComponent },
-    { path: '**', component: NotFoundPageComponent }
-    ];
-
-    // @NgModule({...})
-    ```
-
-- *routes* describes how to navigate through the app
-
-- remove the old markup from *app.component.html* and then add the *RouterOutlet* directive:
-
-```HTML
-<router-outlet></router-outlet>
-```
+  🎁 Then, replace the old lines from your root markup file (*app.component.html*) with the tag which allows routing (*router-outlet*).
 
 ## Exercise 2 - Update favicon
 
-- let's update favicon by first deleting _favicon.ico_ file from _fx-trading-app_ and updating _angular.json_ by deleting `src/favicon.ico` line
+🚀 It is nice to have a logo for each application. Ours already has one. Let's put it as favicon to help users easily identify our app.
 
-- download [fav icon package](https://github.com//WebToLearn/3-days-of-Angular-magic/raw/master/Design/fx-trading-favicon-package.zip) and unzip it, then copy and replace all files to _assets_ folder
+  🎁 We already packed the logo files for you [here](https://github.com//WebToLearn/3-days-of-Angular-magic/raw/master/Design/fx-trading-favicon-package.zip)
 
-- replace the following code in the head section of _src/index.html_ file with:
+  🎁 After downloading and unzipping, put them in _assets_ folder.
 
-    ```html
-    <meta charset="utf-8">
-    <title>FxTradingApp</title>
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
+  🎁 Remove the default Angular favicon.
 
-    <link rel="icon" href="assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-    <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content="Fx Trading application" />
-    ```
+  🎁 Link these images with our application via *head* section of *src/index.html* file.
 
 ## Exercise 3 - Add global styles
 
-- let's update the global style file, *styles.css*, which contains the style used in the whole application:
+🚀 Even if our application has many pages, they should seem to be from the same story. This means that a global style file should be filled in with some CSS. Does your styles makes the app look the same as in the design mockups?
 
-```CSS
-/* You can add global styles to this file, and also import other style files */
+  🎁 The global style file is *styles.css.
 
-html, body{
-    height: 100%;
-    color: #373A3C;
-}
+  🎁 You should define the style for some common tags and classes like _h1_..._h6_, _.btn-primary_ and so on.
 
-h1,h2,h3,h4,h5,h6 {
-    color: #7C7C7C;
-}
+## Exercise 4 - Add Fontawesome
 
-.btn-primary {
-    background-color: #3496F0;
-}
+🚀 Our app looks prettier with icons. [Font Awesome](https://fontawesome.com) library will provide them to us.
 
-.btn-link {
-    color: #3496F0;
-}
+  🎁 *index.html* is the place where you should import the library.
 
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #F2F2F2;
-}
+## Exercise 5 - Add Bootstrap
 
-.flex {
-    display: flex;
-}
+🚀 [ngx-bootstrap](https://valor-software.com/ngx-bootstrap/#/) helps us with styling. Let's install it.
 
-.flex-vertical-centered {
-    display: flex;
-    align-items: center;
-}
+  🎁 You should install *ngx-bootstrap* via *npm*.
 
-.title {
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-}
+  🎁 Then you should import its CSS file into _index.html_ file.
 
-.title-border {
-    border-bottom: 1px solid #DDDDDD;
-}
+## Exercise 6 - Add Datepicker
 
-.screen-full-height {
-    height: 100vh;
-}
+🚀 We need to manipulate dates and it is already known that it's not an easy task. The datepicker library from *ngx-bootstrap* comes for helping us.
 
-.is-invalid {
-  border-left: 5px solid #D9534F;
-}
-```
+  🎁 Add its CSS file into _index.html_ file.
 
-- *toast* has its own style, so let's update *angular.json* by adding the file which contains it:
+  🎁 Every new module should be added into *app.module.ts*. So, import _BsDatepickerModule_ there.
 
-```JSON
-"styles": [
-  "styles.css", // already here
-  "node_modules/ngx-toastr/toastr.css" // add this
-]
-```
+## Exercise 7 - Add Alerts package
 
-- we will also update *app.module.ts* by adding *ToastrModule*:
+🚀 It is important to give feedback to the user and tell him if their requests were successfully or not. [ngx-toastr](https://github.com/scttcper/ngx-toastr) alerts are a nice way to display that info.
 
-    ```JavaScript
-    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-    import { ToastrModule } from 'ngx-toastr';
-    ...
-    imports: [
-        ...,
-        BrowserAnimationsModule,
-        ToastrModule.forRoot()
-    ],
-    ...
-    ```
+  🎁 Install *ngx-toastr* via *npm*.
 
-## Exercise 4 - Add Bootstrap
-
-- install Bootstrap dependency:
-
-  ```bash
-  npm install ngx-bootstrap
-  ```
-
-- add this in *head* section of *index.html*:
+  🎁 Add its style file into *angular.json*.
   
-  ```HTML
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-  ```
-
-## Exercise 5 - Add Datepicker
-
-- add this in *head* section of *index.html*:
-
-  ```HTML
-   <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-  ```
-
-- *app.module.ts*:
-
-    ```JavaScript
-    import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
-    imports: [
-        ...
-        BsDatepickerModule.forRoot()
-    ]
-
-    ```
-
-## Exercise 6 - Add Fontawesome
-
-- add this in *head* section of *index.html*:
-
-  ```HTML
-  <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-  crossorigin="anonymous">
-  ```
+  🎁 Update *app.module.ts* by adding *ToastrModule*.
