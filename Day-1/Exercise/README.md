@@ -16,7 +16,7 @@
 
 ## General indications
 
-🔥 The working folder for this day will be _Day-1\Exercise\Code_. T
+🔥 The working folder for this day will be _Day-1\Exercise\Code_.
 
 🔥 You can find the exercises solutions for this day at _Day-1\Exercise\Solution_.
 
