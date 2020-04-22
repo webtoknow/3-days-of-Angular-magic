@@ -233,7 +233,7 @@ class Joke {
 
 ```javascript
 const routes: Routes = [
-    { path: 'books, component: BookListComponent }
+    { path: 'books', component: BookListComponent }
 ]
 ```
 
