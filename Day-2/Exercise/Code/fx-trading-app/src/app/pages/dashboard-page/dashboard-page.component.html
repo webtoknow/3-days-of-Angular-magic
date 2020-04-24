@@ -1,1 +1,21 @@
-<p>dashboard-page works!</p>
+<h4>Transactions:</h4>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Primary CCY</th>
+            <th>Secondary CCY</th>
+            <th>Rate</th>
+            <th>Action</th>
+            <th>Notional</th>
+            <th>Tenor</th>
+            <th>Transaction Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let transaction of transactions" app-transaction-row [row] = "transaction">
+        </tr>
+    </tbody>
+</table>

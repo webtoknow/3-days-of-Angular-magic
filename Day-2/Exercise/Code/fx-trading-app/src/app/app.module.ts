@@ -10,6 +10,9 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { TradeService } from './services/trade.service';
+import { HttpClientModule } from '@angular/common/http';
+import { TransactionRowComponent } from './pages/transaction-row/transaction-row.component';
 
 @NgModule({
   declarations: [
@@ -17,16 +20,18 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     DashboardPageComponent,
     LoginPageComponent,
     NotFoundPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
+    TransactionRowComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     ToastrModule.forRoot(),
     BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [TradeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
