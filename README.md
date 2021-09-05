@@ -4,18 +4,11 @@ This training is addressed to everyone who wants to use Angular magic to build a
 
 By understanding the theory and solving the exercises from each day, you will be introduced in the basics of Angular.
 
-We will develop together during the 3 days a functional Forex trading application meant to help us to buy and sell currencies and also to view all transactions (made by us or by other users). We will follow the [design](#design) to make our application user-friendly.
+We will develop together, depending on our knowledge,  during the 3 days:
 
-## Technical requirements
+- a functional Personal Travelling Blog where we can display all the blog articles and allow the user to execute CRUD operations on them. Also, we have an article details page where we can read the whole article. We will follow the [Blog design and requirements](Design/Blog/README.md) to make our application user-friendly.
 
-We just need:
-
-- [Modern browser](https://browsehappy.com/)
-- [Visual Studio Code](https://code.visualstudio.com/Download)
-- [Git](https://git-scm.com/download/win)
-- [NodeJS](https://nodejs.org/en/)
-- [JSON Server](https://github.com/typicode/json-server)
-- [Angular CLI](https://github.com/angular/angular-cli)
+- or a functional Forex trading application meant to help us to buy and sell currencies and also to view all transactions (made by us or by other users). We will follow the [Fx trading design and requirements](Design/Fx-trading/README.md) to make our application user-friendly.
 
 ## The agenda
 
@@ -34,27 +27,13 @@ The agenda has the following content:
   - [Exercise - Blog app](Day-3/Exercise-Blog/README.md)
   - [Exercise - Fx Trading app](Day-3/Exercise-Fx-trading/README.md)
 
-## Design
+## Technical requirements
 
-You can find all design specifications in
-[Design Section](Design/README.md).
+We just need:
 
-### Login
-
-![Login](Design/img/Login-VD.png "Login")
-
-### Register
-
-![Register](Design/img/Register-VD.png "Register")
-
-### Dashboard
-
-![Dashboard](Design/img/Dashboard-VD.png "Dashboard")
-
-### Not Found
-
-![Not Found](Design/img/404.png "Not Found")
-
-### Specifications
-
-![Specifications](Design/img/Assets-VD.png "Specifications")
+- [Modern browser](https://browsehappy.com/)
+- [Visual Studio Code](https://code.visualstudio.com/Download)
+- [Git](https://git-scm.com/download/win)
+- [NodeJS](https://nodejs.org/en/)
+- [JSON Server](https://github.com/typicode/json-server)
+- [Angular CLI](https://github.com/angular/angular-cli)
