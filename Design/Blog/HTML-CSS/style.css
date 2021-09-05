@@ -1,0 +1,258 @@
+:root {
+    --white-color: #FFFFFF;
+    --black-color: #1e1e1e;
+    --grey-color: #9b9b9b;
+    --pink-color: #FFE3E3;
+    --cardo-font: 'Cardo', serif;
+    --montserrat-font: 'Montserrat', sans-serif;
+  }
+
+html {
+    font-family: var(--cardo-font);
+    color: var(--black-color);
+}
+
+p {
+    margin-bottom: 30px;
+    line-height: 1.9;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1280px;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+}
+
+.nav__container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav__item {
+    display: block;
+    font-family: var(--montserrat-font);
+    font-size: 11px;
+    margin: 0 0 0 100px;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+.add__container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 130px 0 90px 0;
+}
+
+.button {
+    background: none;
+    border: 1px solid var(--grey-color);
+    border-radius: 50px;
+    font-size: 14px;
+    height: 60px;
+    line-height: 1.3;
+    width: 300px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.title {
+    line-height: 1.2;
+    font-family: var(--montserrat-font);
+    font-size: 46px;
+    margin: 0 auto;
+    text-align: center;
+    width: 800px;
+}
+
+.title--details {
+    margin-top: 130px;
+}
+
+.info__container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.info__container--details {
+    margin-bottom: 40px;
+}
+
+.info__item {
+    color: var(--grey-color);
+    display: block;
+    font-family: var(--montserrat-font);
+    font-size: 14px;
+    padding: 0;
+}
+
+.info__item:not(:last-child):after {
+    content: '\2022';
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.info__mark {
+    color: var(--black-color);
+    font-weight: bold;
+}
+
+.actions__container {
+    margin: 40px 0 20px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions__btn {
+    padding: 0;
+    background: none;
+    border: none;
+    font-family: var(--montserrat-font);
+    font-size: 14px;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+.actions__btn:not(:last-child):after {
+    content: '\007c';
+    padding: 5px;
+}
+
+.content__container {
+    margin-top: 80px;
+}
+
+.readmore__container {
+    display: flex;
+    justify-content: center;
+    margin: 140px 0 100px 0;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 35px 0 100px 0;
+}
+
+.footer__link {
+    color: var(--black-color);
+    font-family: var(--montserrat-font);
+    font-size: 34px;
+    line-height: 1.2;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.footer__link--next {
+    align-self: flex-end;
+    margin-top: -40px;
+}
+
+.show-modal {
+    overflow: hidden;
+}
+
+.show-modal.modal__overlay {
+    display: flex;
+}
+
+.modal__overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none; 
+    /* display: flex */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    width: 1000px;
+    height: 700px;
+    background: var(--white-color);
+    box-shadow: 0 0 26px 6px;
+}
+
+.modal__content {
+    padding: 50px 75px;
+}
+
+.inputs__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.input {
+    width: 400px;
+    height: 35px;
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: var(--cardo-font);
+    padding: 0 5px;
+    margin-bottom: 25px;
+}
+
+.input--big {
+    width: 100%;
+}
+
+.textarea {
+    display: block;
+    border: 1px solid var(--grey-color);
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: var(--cardo-font);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.button--pink {
+    background: var(--pink-color);
+}
+
+.saying {
+    font-family: var(--montserrat-font);
+    font-size: 28px;
+    font-style: italic;
+    line-height: 30px;
+    background: var(--pink-color);
+    padding: 105px;
+    margin-right: -105px;
+    margin-left: -105px;
+    text-align: center;
+}
